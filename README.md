@@ -1,4 +1,8 @@
 
+### 技术栈  
+
+react 19 + react-dom 19 + react-scripts 5 + less（20261119 已由 React 18 升级至 React 19 最新稳定版 19.3.1）  
+
 ### 安装脚手架工具  
 
 ```

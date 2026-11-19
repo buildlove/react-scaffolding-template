@@ -1,0 +1,13 @@
+# pnpm 工作区/策略配置（pnpm 10+ 将安装策略配置迁移至此文件）
+
+# 使用扁平化 node_modules 结构，保证 react-scripts / eslint-config-react-app
+# 等老工具链能正确解析插件（pnpm 默认的隔离结构会导致 eslint 插件找不到）
+nodeLinker: hoisted
+
+minimumReleaseAgeExclude:
+  - '@testing-library/user-event@14.6.13'
+
+# 显式声明忽略其安装脚本的依赖（core-js 的 postinstall 仅打印赞助提示，无实际构建产物）
+allowBuilds:
+  core-js: false
+  core-js-pure: false
