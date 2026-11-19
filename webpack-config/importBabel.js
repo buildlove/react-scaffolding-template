@@ -1,7 +1,8 @@
 const { addBabelPlugin } = require('customize-cra');
 
 module.exports = {
-  addAntdBabelPlugin: addBabelPlugin(['import', { libraryName: 'antd', style: true }, 'antd']),
+  // antd v5 使用 CSS-in-JS 无样式文件可按需引入，style 必须为 false（v5 不再提供 style 目录）
+  addAntdBabelPlugin: addBabelPlugin(['import', { libraryName: 'antd', style: false }, 'antd']),
   addBcdBabelPlugin: addBabelPlugin([
     'import',
     { libraryName: '@leonwerth/basic-components', style: false, camel2DashComponentName: false, libraryDirectory: 'es' },

@@ -1,0 +1,98 @@
+/* 布局整体：顶部栏 + 可滚动内容区（与 vue3 脚手架 layout.vue 样式保持一致） */
+.layouts {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  /* 顶部导航栏：品牌 + 菜单 + 时钟 三段式 */
+  .layouts-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    height: 64px;
+    padding: 0 24px;
+    background: var(--app-card-bg);
+    border-bottom: 1px solid #e5eaf3;
+  }
+
+  /* 品牌区 */
+  .layouts-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* Logo：渐变色圆角方块 */
+  .layouts-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #4f46e5, #3b82f6);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  /* 项目名称 */
+  .layouts-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+  }
+
+  /* 项目副标题（技术栈） */
+  .layouts-subtitle {
+    font-size: 12px;
+    color: var(--app-text-secondary);
+  }
+
+  /* 主导航 */
+  .layouts-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 16px;
+  }
+
+  /* 导航项：悬停变色，激活态渐变底 */
+  .layouts-nav-item {
+    padding: 6px 16px;
+    border-radius: 8px;
+    color: #606266;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.2s;
+
+    &:hover {
+      color: #409eff;
+      background: #f0f7ff;
+    }
+
+    &.is-active {
+      color: #fff;
+      background: linear-gradient(135deg, #4f46e5, #3b82f6);
+    }
+  }
+
+  /* 右侧时钟：等宽数字避免抖动 */
+  .layouts-clock {
+    margin-left: auto;
+    font-size: 13px;
+    color: var(--app-text-secondary);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* 内容区：超出滚动 */
+  .layouts-wrapper {
+    flex: 1;
+    overflow: auto;
+  }
+
+  .layouts-main {
+    padding: 20px;
+    min-height: calc(100vh - 64px - 40px);
+  }
+}
